@@ -98,7 +98,7 @@ const Navbar = () => {
                     mt={1}
                     sx={{ padding: "0px 10px" }}
                   >
-                    {notif.staus === "pending" && (
+                    {notif.status === "pending" && (
                       <Button
                         size="small"
                         variant="contained"
@@ -126,7 +126,7 @@ const Navbar = () => {
                         Open Chat
                       </Button>
                     )}
-                    {notif.staus === "pending" && (
+                    {notif.status === "pending" && (
                       <Button
                         size="small"
                         variant="contained"
