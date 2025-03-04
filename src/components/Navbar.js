@@ -33,7 +33,7 @@ const Navbar = () => {
     >
       <Toolbar>
         {/* Logo & Title */}
-        <Box display="flex" alignItems="center">
+        <Box display="flex" alignItems="center" onClick={() => window.location.href = "/testing"} sx={{ cursor: "pointer"}}>
           <ChatBubbleIcon sx={{ fontSize: 32, mr: 1, color: "#f5f5f5" }} />
           <Typography
             variant="h6"
@@ -46,7 +46,7 @@ const Navbar = () => {
 
         {/* Notification Icon with Badge */}
         <IconButton sx={{ color: "#f5f5f5" }} onClick={handleOpen}>
-          <Badge badgeContent={invites.length} color="error">
+          <Badge badgeContent={invites.filter((invite) => invite.status === "pending").length} color="error">
             <NotificationsIcon />
           </Badge>
         </IconButton>

@@ -25,12 +25,14 @@ const CreateChat = ({ onChatCreated }) => {
 
   const handleCreateChat = async () => {
     if (!chatName.trim()) return alert("Chat name is required");
+    setLoading(true);
     await sendInvitation({
       users: selectedUsers,
       chatName: chatName
     });
+    setLoading(false);
   };
-
+  console.log(loading)
   return (
     <>
       <Button

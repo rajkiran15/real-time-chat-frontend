@@ -9,6 +9,7 @@ const useInvitation = () => {
     const sendInvitation = async (data) => {
         api.postApi(endpoints.invite.inviteUsers, data).then((res) => {
            alert("Invitation sent successfully.");
+           navigate(`/testing/chat/${res.chatId}`);
         }).catch((err) => {
            alert("Something went wrong, please try again.");
         });
@@ -25,7 +26,7 @@ const useInvitation = () => {
 
     const handleReject = async (id) => {
         api.updateApi(`${endpoints.invite.rejectInvite}/${id}`).then((res) => {
-           alert("Invitation sent successfully.");
+           alert("Recjected successfully.");
         }).catch((err) => {
            alert("Something went wrong, please try again.");
         });
